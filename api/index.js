@@ -42,16 +42,9 @@ async function getAllInvoices(_req, res, next) {
 
 app.get('/api/invoices', getAllInvoices)
 
-// app.get('/api/invoices', (req, res) => {
-//   const path = `/api/invoices/${v4()}`
-//   res.setHeader('Content-Type', 'text/html')
-//   // res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
-//   res.end(`Hello! Go to item: <a href="${path}">${path}</a>`)
+// app.get('/api/invoices/:slug', (req, res) => {
+//   const { slug } = req.params
+//   res.end(`Item: ${slug}`)
 // })
-
-app.get('/api/invoices/:slug', (req, res) => {
-  const { slug } = req.params
-  res.end(`Item: ${slug}`)
-})
 
 module.exports = app
