@@ -3,9 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "dev:vercel": "vercel dev",
-    "build": "vite build",
+    "dev": "vercel dev",
+    "build": "node build",
     "preview": "vite preview",
     "lint": "eslint ./src/**/*.ts",
     "lint:fix": "eslint **/*.ts --fix",
