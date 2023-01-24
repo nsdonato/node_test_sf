@@ -6,7 +6,6 @@ const swaggerDocument = require('../swagger.json')
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 app.get('/api/invoices', (req, res) => {
-  console.log(req)
   const path = `/api/invoices/${v4()}`
   res.setHeader('Content-Type', 'text/html')
   // res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
@@ -14,7 +13,6 @@ app.get('/api/invoices', (req, res) => {
 })
 
 app.get('/api/invoices/:slug', (req, res) => {
-  console.log(req)
   const { slug } = req.params
   res.end(`Item: ${slug}`)
 })
