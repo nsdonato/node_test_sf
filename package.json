@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vercel dev",
-    "build": "node build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint ./src/**/*.ts",
     "lint:fix": "eslint **/*.ts --fix",
