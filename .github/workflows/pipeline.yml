@@ -5,14 +5,14 @@ on:
     branches: [main]
 
 jobs:
-  check-skip:
-    name: ✋🏼 Cancel Previous Redundant Builds
-    runs-on: ubuntu-latest
-    steps:
-      - name: ✋🏼 Cancel Previous Redundant Builds
-        uses: styfle/cancel-workflow-action@0.6.0
-        with:
-          access_token: ${{ github.token }}
+  # check-skip:
+  #   name: ✋🏼 Cancel Previous Redundant Builds
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: ✋🏼 Cancel Previous Redundant Builds
+  #       uses: styfle/cancel-workflow-action@0.6.0
+  #       with:
+  #         access_token: ${{ github.token }}
   deploy:
     runs-on: ubuntu-latest
     name: 🚀 Vercel Production Deployment
