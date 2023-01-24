@@ -2,12 +2,13 @@ import fs from 'fs'
 
 import { PrismaClient } from '@prisma/client'
 
-const data = JSON.parse(fs.readFileSync('./prisma/data.json', 'utf-8'))
-
 import { type Data } from './data.dto'
+
+const data = JSON.parse(fs.readFileSync('./prisma/data.json', 'utf-8'))
 
 const prisma = new PrismaClient()
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function main() {
   await prisma.$transaction(
     data.map((d: Data) =>
@@ -52,7 +53,9 @@ async function main() {
 }
 
 main()
-  .then(async () => await prisma.$disconnect())
+  .then(async () => {
+    await prisma.$disconnect()
+  })
   .catch(async (e) => {
     console.error(e)
     await prisma.$disconnect()
