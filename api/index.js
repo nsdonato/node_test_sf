@@ -24,7 +24,7 @@ async function getAllInvoicesController() {
     })
     return invoices
   } catch (error) {
-    throw new AppError({ message: String(error), status: 500 })
+    console.log('getAllInvoicesController: ', error)
   }
 }
 
